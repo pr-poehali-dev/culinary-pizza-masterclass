@@ -4,8 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export default function Index() {
+  const [heroImageRef, heroImageVisible] = useIntersectionObserver();
+  const [aboutImageRef, aboutImageVisible] = useIntersectionObserver();
+  const [gallery1Ref, gallery1Visible] = useIntersectionObserver();
+  const [gallery2Ref, gallery2Visible] = useIntersectionObserver();
+  const [gallery3Ref, gallery3Visible] = useIntersectionObserver();
+
   return (
     <div className="min-h-screen bg-warm-cream">
       {/* Header */}
@@ -58,11 +65,13 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/img/5588d158-9b9f-4ae0-8ee0-a81a25500aa2.jpg" 
-                alt="Шеф-повар готовит пиццу" 
-                className="rounded-lg shadow-2xl"
-              />
+              <div ref={heroImageRef} className={`transition-all duration-700 ${heroImageVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-8'}`}>
+                <img 
+                  src="/img/5588d158-9b9f-4ae0-8ee0-a81a25500aa2.jpg" 
+                  alt="Шеф-повар готовит пиццу" 
+                  className="rounded-lg shadow-2xl"
+                />
+              </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <p className="text-warm-brown font-semibold">Следующий мастер-класс:</p>
                 <p className="text-warm-orange font-bold">25 января, 18:00</p>
@@ -100,7 +109,7 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-warm-orange/10 p-8 rounded-lg">
+              <div ref={aboutImageRef} className={`bg-warm-orange/10 p-8 rounded-lg transition-all duration-700 ${aboutImageVisible ? 'animate-fade-in-left' : 'opacity-0 translate-x-8'}`}>
                 <blockquote className="text-warm-brown italic text-lg">
                   "Пицца - это не просто еда, это искусство, которое объединяет людей. 
                   Я с радостью поделюсь с вами традициями, которые передавались в моей 
@@ -222,7 +231,7 @@ export default function Index() {
             Готовые блюда и процесс
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div ref={gallery1Ref} className={`relative overflow-hidden rounded-lg shadow-lg group transition-all duration-700 ${gallery1Visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}>
               <img 
                 src="/img/29dbd153-431e-4ce4-bc06-11499f8030b5.jpg" 
                 alt="Готовая пицца" 
@@ -230,7 +239,7 @@ export default function Index() {
               />
               <div className="absolute inset-0 bg-warm-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div ref={gallery2Ref} className={`relative overflow-hidden rounded-lg shadow-lg group transition-all duration-700 delay-150 ${gallery2Visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}>
               <img 
                 src="/img/e35f8f44-e174-4d18-a82a-c89efbdd022e.jpg" 
                 alt="Процесс приготовления" 
@@ -238,7 +247,7 @@ export default function Index() {
               />
               <div className="absolute inset-0 bg-warm-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div ref={gallery3Ref} className={`relative overflow-hidden rounded-lg shadow-lg group transition-all duration-700 delay-300 ${gallery3Visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}>
               <img 
                 src="/img/5588d158-9b9f-4ae0-8ee0-a81a25500aa2.jpg" 
                 alt="Шеф-повар за работой" 
