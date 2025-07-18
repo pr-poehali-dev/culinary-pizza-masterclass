@@ -67,7 +67,7 @@ export default function Index() {
             <div className="relative">
               <div ref={heroImageRef} className={`transition-all duration-700 ${heroImageVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-8'}`}>
                 <img 
-                  src="/img/5588d158-9b9f-4ae0-8ee0-a81a25500aa2.jpg" 
+                  src="/img/0b943d1e-4692-4851-b5e9-eb0e5e1237fa.jpg" 
                   alt="Шеф-повар готовит пиццу" 
                   className="rounded-lg shadow-2xl"
                 />
@@ -233,7 +233,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div ref={gallery1Ref} className={`relative overflow-hidden rounded-lg shadow-lg group transition-all duration-700 ${gallery1Visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}>
               <img 
-                src="/img/29dbd153-431e-4ce4-bc06-11499f8030b5.jpg" 
+                src="/img/070f2477-dd35-48ee-bb11-972dccab10fa.jpg" 
                 alt="Готовая пицца" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -241,7 +241,7 @@ export default function Index() {
             </div>
             <div ref={gallery2Ref} className={`relative overflow-hidden rounded-lg shadow-lg group transition-all duration-700 delay-150 ${gallery2Visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}>
               <img 
-                src="/img/e35f8f44-e174-4d18-a82a-c89efbdd022e.jpg" 
+                src="/img/ef7675f8-c899-407f-8d6e-ce9d87fa88f5.jpg" 
                 alt="Процесс приготовления" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -249,7 +249,7 @@ export default function Index() {
             </div>
             <div ref={gallery3Ref} className={`relative overflow-hidden rounded-lg shadow-lg group transition-all duration-700 delay-300 ${gallery3Visible ? 'animate-fade-in' : 'opacity-0 translate-y-8'}`}>
               <img 
-                src="/img/5588d158-9b9f-4ae0-8ee0-a81a25500aa2.jpg" 
+                src="/img/0b943d1e-4692-4851-b5e9-eb0e5e1237fa.jpg" 
                 alt="Шеф-повар за работой" 
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
